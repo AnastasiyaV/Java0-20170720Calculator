@@ -9,6 +9,8 @@ public class MyOpFactory  {
                 return new OpDiv();
             case "*":
                 return new OpMul();
+            case "GCD":
+                return new OpGCD();
             default:
                 return null;
         }

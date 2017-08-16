@@ -1,4 +1,5 @@
 
 public interface Operation {
-    double exec(double a, double b);
+    int exec(int a, int b);
+
 }
