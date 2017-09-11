@@ -18,6 +18,7 @@ public class OpGCD implements Operation {
     class InnerGcdCalculation {
         List<Integer> simpleDividersFirstNumber = new ArrayList<Integer>();
 
+
         List<Integer> simpleDividersSecondNumber = new ArrayList<Integer>();
         List<Integer> unicSimpleDividers = new ArrayList<Integer>();
 
