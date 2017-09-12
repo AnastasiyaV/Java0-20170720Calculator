@@ -8,7 +8,7 @@ public class MainCalculator {
         Scanner sc = new Scanner(System.in);
         System.out.println("Enter first number");
         int a = sc.nextInt();
-        System.out.println("Enter sign (PLUS,MINUS,DIVIDE,MULTIPLY,GCD)");
+        System.out.println("Enter sign (+ , - , / , * , % (for Ggreatest Common Divisor) )");
         String sign = sc.next();
         Operation operation = new MyOpFactory().getOpInstance(sign);
         if (operation == null) {
@@ -17,11 +17,12 @@ public class MainCalculator {
         }
         System.out.println("Enter second number");
         int b = sc.nextInt();
-        System.out.println(operation.exec(a, b));
-
-
-        //т.к. мы не используем больше нигде MyOpFactory переменную , то и не надо ее создавать, т.е. мы создаем не объект
+        System.out.println(operation.exec(a, b)); //т.к. мы не используем больше нигде MyOpFactory
+        // переменную , то и не надо ее создавать, т.е. мы создаем не объект
         // фабрики, а объект операции
+
+
+
 
 
     }

@@ -1,5 +1,5 @@
 
 public interface Operation {
-    int exec(int a, int b);
+     int exec (int a, int b);
 
 }
