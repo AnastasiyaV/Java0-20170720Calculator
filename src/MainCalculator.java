@@ -10,6 +10,8 @@ public class MainCalculator {
         int a = sc.nextInt();
         System.out.println("Enter sign (+ , - , / , * , % (for Ggreatest Common Divisor) )");
         String sign = sc.next();
+        Signs operationSimbols = Signs.valueOf(sign);
+
         Operation operation = new MyOpFactory().getOpInstance(sign);
         if (operation == null) {
             System.out.println("wrong sign " + sign);
@@ -28,6 +30,10 @@ public class MainCalculator {
     }
 
     enum Signs {
-        PLUS, MINUS, DIVIDE, MULTIPLY, GCD
+        PLUS("+"), MINUS("-"), DIVIDE("/"), MULTIPLY("*"), GCD("%")
+        //add constructor
+        private Signs symbol;
+        private Signs
+
     }
 }

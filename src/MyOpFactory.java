@@ -1,5 +1,5 @@
 public class MyOpFactory  {
-    public Operation getOpInstance(String op) {
+    public Operation getOpInstance(MainCalculator.Signs op) {
         switch (op) {
             case "+":
                 return new OpPlus();
