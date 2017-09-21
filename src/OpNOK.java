@@ -1,12 +1,11 @@
 import java.util.ArrayList;
 import java.util.List;
 
-public class OpGCD implements Operation{
+public class OpNOK implements Operation{
 
     List<Integer> simpleDividersFirstNumber = new ArrayList<Integer>();
     List<Integer> simpleDividersSecondNumber = new ArrayList<Integer>();
     List<Integer> unicSimpleDividers = new ArrayList<Integer>();
-
     @Override
     public int exec(int a, int b) {
 //        simpleDividersFirstNumber.add(a);
@@ -17,7 +16,6 @@ public class OpGCD implements Operation{
 //            return Math.abs(a);
 //        }
 //        return exec(b, a % b);
-
 
 //        A recursive method would be:
 //        static int gcd(int a, int b)
@@ -62,7 +60,4 @@ public class OpGCD implements Operation{
         }
         return currentValue;
     }
-
-
-
 }

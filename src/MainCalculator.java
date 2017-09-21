@@ -1,8 +1,6 @@
 import java.util.Scanner;
 
 public class MainCalculator {
-
-
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         System.out.println("Enter first number");
@@ -10,7 +8,6 @@ public class MainCalculator {
         System.out.println("Enter sign (+ , - , / , * , %)");
         String sign = sc.next();
         Signs operationSimbols = Signs.valueOf(getSign(sign));
-
         Operation operation = new MyOpFactory().getOpInstance(operationSimbols);
         if (operation == null) {
             System.out.println("wrong sign " + sign);
@@ -22,7 +19,6 @@ public class MainCalculator {
         // переменную , то и не надо ее создавать, т.е. мы создаем не объект
         // фабрики, а объект операции
     }
-
     private static String getSign(String normalSign) throws IllegalArgumentException {
         switch (normalSign) {
             case "+":
@@ -34,22 +30,16 @@ public class MainCalculator {
             case "*":
                 return "MULTIPLY";
             case "%":
-                return "GCD";
+                return "NOK";
         }
-
         throw new IllegalArgumentException("You entered unsupported sign");
-
     }
-
     enum Signs {
-        PLUS("+"), MINUS("-"), DIVIDE("/"), MULTIPLY("*"), GCD("%");
-        //        add constructor
+        PLUS("+"), MINUS("-"), DIVIDE("/"), MULTIPLY("*"), NOK("%");
         private String symbol;
-
         public String getSymbol() {
             return symbol;
         }
-
         private Signs(String symbol) {
             this.symbol = symbol;
         }
