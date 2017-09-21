@@ -4,15 +4,14 @@ public class MainCalculator {
 
 
     public static void main(String[] args) {
-
         Scanner sc = new Scanner(System.in);
         System.out.println("Enter first number");
         int a = sc.nextInt();
-        System.out.println("Enter sign (+ , - , / , * , % (for Ggreatest Common Divisor) )");
+        System.out.println("Enter sign (+ , - , / , * , %)");
         String sign = sc.next();
-        Signs operationSimbols = Signs.valueOf(sign);
+        Signs operationSimbols = Signs.valueOf(getSign(sign));
 
-        Operation operation = new MyOpFactory().getOpInstance(sign);
+        Operation operation = new MyOpFactory().getOpInstance(operationSimbols);
         if (operation == null) {
             System.out.println("wrong sign " + sign);
             return;//out from main method
@@ -22,18 +21,37 @@ public class MainCalculator {
         System.out.println(operation.exec(a, b)); //т.к. мы не используем больше нигде MyOpFactory
         // переменную , то и не надо ее создавать, т.е. мы создаем не объект
         // фабрики, а объект операции
+    }
 
+    private static String getSign(String normalSign) throws IllegalArgumentException {
+        switch (normalSign) {
+            case "+":
+                return "PLUS";
+            case "-":
+                return "MINUS";
+            case "/":
+                return "DIVIDE";
+            case "*":
+                return "MULTIPLY";
+            case "%":
+                return "GCD";
+        }
 
-
-
+        throw new IllegalArgumentException("You entered unsupported sign");
 
     }
 
     enum Signs {
-        PLUS("+"), MINUS("-"), DIVIDE("/"), MULTIPLY("*"), GCD("%")
-        //add constructor
-        private Signs symbol;
-        private Signs
+        PLUS("+"), MINUS("-"), DIVIDE("/"), MULTIPLY("*"), GCD("%");
+        //        add constructor
+        private String symbol;
 
+        public String getSymbol() {
+            return symbol;
+        }
+
+        private Signs(String symbol) {
+            this.symbol = symbol;
+        }
     }
 }
