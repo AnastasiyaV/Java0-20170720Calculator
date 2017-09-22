@@ -1,3 +1,5 @@
+package calculator;
+
 import java.util.Scanner;
 
 public class MainCalculator {
@@ -15,7 +17,7 @@ public class MainCalculator {
         }
         System.out.println("Enter second number");
         int b = sc.nextInt();
-        System.out.println(operation.exec(a, b)); //т.к. мы не используем больше нигде MyOpFactory
+        System.out.println(operation.exec(a, b)); //т.к. мы не используем больше нигде calculator.MyOpFactory
         // переменную , то и не надо ее создавать, т.е. мы создаем не объект
         // фабрики, а объект операции
     }

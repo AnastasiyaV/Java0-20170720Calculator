@@ -1,3 +1,7 @@
+package calculator.AllOperations;
+
+import calculator.Operation;
+
 public class OpNOK implements Operation {
 
     int gcd(int a, int b){

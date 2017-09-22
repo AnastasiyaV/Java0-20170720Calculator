@@ -1,16 +1,20 @@
+package calculator;
+
+import calculator.AllOperations.*;
+
 public class MyOpFactory  {
     public Operation getOpInstance(MainCalculator.Signs op) {
         switch (op) {
 //            case "+":
-//                return new OpPlus();
+//                return new calculator.AllOperations.OpPlus();
 //            case "-":
-//                return new OpMinus();
+//                return new calculator.AllOperations.OpMinus();
 //            case "/":
-//                return new OpDiv();
+//                return new calculator.AllOperations.OpDiv();
 //            case "*":
-//                return new OpMul();
+//                return new calculator.AllOperations.OpMul();
 //            case "%":
-//                return new OpNOK();
+//                return new calculator.AllOperations.OpNOK();
             case PLUS:
                 System.out.println("You've chosen " + op.getSymbol());
                 return new OpPlus();
