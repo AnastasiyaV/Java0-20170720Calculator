@@ -50,7 +50,7 @@ public class ReadFile implements DataReader {
             return true;
         } else {
             splitLine = line.split(" ");
-            System.out.println("Do you want to quit? Enter q");
+            System.out.println("Do you want to quit? Enter q / Enter anything else - to continue");
             return sc.next().equals("q");
         }
     }
